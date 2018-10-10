@@ -144,7 +144,7 @@
   </setupTask>
   <setupTask
       xsi:type="setup:TextModifyTask"
-      url="${git.clone.location/burp/project_options.json}">
+      url="${git.clone.location|uri}/burp/project_options.json">
     <modification
         pattern="&quot;listener_port&quot;:(8080)">
       <substitution>&quot;listener_port&quot;:${burp.port}</substitution>

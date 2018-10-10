@@ -10,7 +10,7 @@ Note: pasting may require right-clicking and selecting `Paste` instead of a key 
 * On the Product page:
   * Select `<User Products>`;
   * Click the green plus symbol on the upper right;
-  * Paste copy [tnhis raw URL][7], which points to [corvus.assessor.product.setup](/oomph/corvus.assessor.product.setup).
+  * Paste copy [this raw URL][7], which points to [corvus.assessor.product.setup](/oomph/corvus.assessor.product.setup).
 * On the Projects page:
   * Collapse `Eclipse Projects`;
   * Expand `GitHub Projects`;
