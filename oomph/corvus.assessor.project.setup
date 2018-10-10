@@ -76,7 +76,7 @@
       <requirement
           name="*"/>
       <sourceLocator
-          rootFolder="${git.clone.corvus.assessor.project.location}"
+          rootFolder="${git.clone.location}"
           locateNestedProjects="true"/>
       <repositoryList
           name="Photon">
@@ -155,7 +155,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.corvus.assessor.project"
-        value="=https://raw.githubusercontent.com/CoastalHacking/CorvusAssessor/master/oomph/CorvusAssessorProject.setup->${git.clone.corvus.assessor.project.location|uri}/oomph/CorvusAssessorProject.setup"
+        value="=https://raw.githubusercontent.com/CoastalHacking/CorvusAssessor/master/oomph/CorvusAssessorProject.setup->${git.clone.location|uri}/oomph/CorvusAssessorProject.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>

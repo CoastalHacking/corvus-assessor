@@ -4,9 +4,18 @@ Corvus Assessor is an [Oomph][0]-configure, customized Eclipse IDE useful for se
 
 ## Install
 
+Note: pasting may require right-clicking and selecting `Paste` instead of a key sequence
+
 * Download and run the [Eclipse Installer][1]
-* On the Product page, copy the raw URL to [corvus.assessor.product.setup](/oomph/corvus.assessor.product.setup) and paste on `<User Product>`
-* On the Projects page, copy the raw URL to [corvus.assessor.project.setup](/oomph/corvus.assessor.project.setup) and paste on `GitHub Projects`
+* On the Product page:
+  * Select `<User Products>`;
+  * Click the green plus symbol on the upper right;
+  * Paste copy [tnhis raw URL][7], which points to [corvus.assessor.product.setup](/oomph/corvus.assessor.product.setup).
+* On the Projects page:
+  * Collapse `Eclipse Projects`;
+  * Expand `GitHub Projects`;
+  * Click the green plus symbol on the upper right;
+  * Paste in this [this raw URL][8]  which points to [corvus.assessor.project.setup](/oomph/corvus.assessor.project.setup).
 
 ## corvus.assessor.product.setup
 
@@ -37,3 +46,5 @@ Oomph tutorial [here][2].
 [4]: https://www.eclipse.org/webtools/jee/
 [5]: https://www.eclipse.org/egit/
 [6]: https://www.eclipse.org/webtools/jsdt/
+[7]: https://raw.githubusercontent.com/CoastalHacking/corvus-assessor/master/oomph/corvus.assessor.product.setup
+[8]: https://raw.githubusercontent.com/CoastalHacking/corvus-assessor/master/oomph/corvus.assessor.project.setup
