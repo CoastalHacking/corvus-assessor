@@ -158,9 +158,15 @@
       predecessor="//@setupTasks.8"
       url="${git.clone.location|uri}/burp/.classpath">
     <modification
-        pattern="${burp.path}">
+        pattern="(burp.path)">
       <substitution>${burp.path}</substitution>
     </modification>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="burp.path"
+      label="Path to Burp JAR">
+    <description>Path to Burp JAR</description>
   </setupTask>
   <stream name="master"
       label="master">
