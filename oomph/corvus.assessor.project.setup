@@ -144,6 +144,8 @@
   </setupTask>
   <setupTask
       xsi:type="setup:TextModifyTask"
+      excludedTriggers="BOOTSTRAP"
+      predecessor="//@setupTasks.8"
       url="${git.clone.location|uri}/burp/project_options.json">
     <modification
         pattern="&quot;listener_port&quot;:(8080)">
