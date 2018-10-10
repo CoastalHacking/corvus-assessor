@@ -138,7 +138,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="burp.port"
-      defaultValue="8181"
+      defaultValue="8080"
       label="Burp listening port">
     <description>Default Burp proxy listening port</description>
   </setupTask>
@@ -149,7 +149,17 @@
       url="${git.clone.location|uri}/burp/project_options.json">
     <modification
         pattern="&quot;listener_port&quot;:(8080)">
-      <substitution>&quot;listener_port&quot;:${burp.port}</substitution>
+      <substitution>${burp.port}</substitution>
+    </modification>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:TextModifyTask"
+      excludedTriggers="BOOTSTRAP"
+      predecessor="//@setupTasks.8"
+      url="${git.clone.location|uri}/burp/.classpath">
+    <modification
+        pattern="${burp.path}">
+      <substitution>${burp.path}</substitution>
     </modification>
   </setupTask>
   <stream name="master"
