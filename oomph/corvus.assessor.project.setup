@@ -15,6 +15,12 @@
     name="corvus.assessor"
     label="Corvus Assessor">
   <setupTask
+      xsi:type="setup:CompoundTask"
+      name="User Preferences">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+  </setupTask>
+  <setupTask
       xsi:type="jdt:JRETask"
       version="JavaSE-1.8"
       location="${jre.location-1.8}"
@@ -43,6 +49,26 @@
       storageURI="scope://Workspace"/>
   <setupTask
       xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.jst.server_adapters.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.server_adapters.ext.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.server_userdoc.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.enterprise_core.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.server_core.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.server_ui.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.server_userdoc.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.jst.enterprise_userdoc.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.wst.server_adapters.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.wtp.jee.capabilities"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -75,10 +101,6 @@
           name="org.eclipse.sdk.feature.group"/>
       <requirement
           name="*"/>
-      <requirement
-          name="org.eclipse.jst.server_adapters.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.jst.server_adapters.ext.feature.feature.group"/>
       <sourceLocator
           rootFolder="${git.clone.location}"
           locateNestedProjects="true"/>
@@ -149,7 +171,7 @@
   <setupTask
       xsi:type="setup:TextModifyTask"
       excludedTriggers="BOOTSTRAP"
-      predecessor="//@setupTasks.8"
+      predecessor="//@setupTasks.9"
       url="${git.clone.location|uri}/burp/project_options.json">
     <modification
         pattern="&quot;listener_port&quot;:(8080)">
@@ -159,7 +181,7 @@
   <setupTask
       xsi:type="setup:TextModifyTask"
       excludedTriggers="BOOTSTRAP"
-      predecessor="//@setupTasks.8"
+      predecessor="//@setupTasks.9"
       url="${git.clone.location|uri}/burp/.classpath">
     <modification
         pattern="(burp.path)">
@@ -172,6 +194,25 @@
       label="Path to Burp JAR">
     <description>Path to Burp JAR</description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:TextModifyTask"
+      excludedTriggers="BOOTSTRAP"
+      predecessor="//@setupTasks.9"
+      url="${git.clone.location|uri}/burp/chrome.launch">
+    <modification
+        pattern="(burp.port)">
+      <substitution>${burp.port}</substitution>
+    </modification>
+    <modification
+        pattern="(chrome.path)">
+      <substitution>${chrome.path}</substitution>
+    </modification>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="chrome.path"
+      defaultValue="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      label="Path to Chrome"/>
   <stream name="master"
       label="master">
     <setupTask
