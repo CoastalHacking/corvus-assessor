@@ -75,6 +75,10 @@
           name="org.eclipse.sdk.feature.group"/>
       <requirement
           name="*"/>
+      <requirement
+          name="org.eclipse.jst.server_adapters.feature.feature.group"/>
+      <requirement
+          name="org.eclipse.jst.server_adapters.ext.feature.feature.group"/>
       <sourceLocator
           rootFolder="${git.clone.location}"
           locateNestedProjects="true"/>
@@ -173,7 +177,7 @@
     <setupTask
         xsi:type="setup:EclipseIniTask"
         option="-Doomph.redirection.corvus.assessor"
-        value="=https://raw.githubusercontent.com/CoastalHacking/CorvusAssessor/master/oomph/CorvusAssessorProject.setup->${git.clone.location|uri}/oomph/CorvusAssessorProject.setup"
+        value="=https://raw.githubusercontent.com/CoastalHacking/corvus-assessor/master/oomph/corvus.assessor.project.setup->${git.clone.location|uri}/oomph/corvus.assessor.project.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
