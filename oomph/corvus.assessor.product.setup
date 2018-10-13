@@ -90,7 +90,7 @@
   <setupTask
       xsi:type="setup:ResourceCreationTask"
       content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xA;&lt;state reopen=&quot;false&quot;/>"
-      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.ui.intro/introstate&#xA;">
+      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.ui.intro/introstate">
     <description>Disable welcome screen</description>
   </setupTask>
   <setupTask
