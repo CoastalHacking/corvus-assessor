@@ -18,7 +18,20 @@
       xsi:type="setup:CompoundTask"
       name="User Preferences">
     <annotation
-        source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
+        source="http://www.eclipse.org/oomph/setup/UserPreferences">
+      <detail
+          key="/instance/org.eclipse.wst.server.core/runtimes">
+        <value>record</value>
+      </detail>
+    </annotation>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="org.eclipse.wst.server.core">
+      <setupTask
+          xsi:type="setup:PreferenceTask"
+          key="/instance/org.eclipse.wst.server.core/runtimes"
+          value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;runtimes>&#xA;  &lt;runtime id=&quot;Apache Tomcat v9.0&quot; location=&quot;${tomcat.dir}&quot; name=&quot;Apache Tomcat v9.0&quot; runtime-type-id=&quot;org.eclipse.jst.server.tomcat.runtime.90&quot; timestamp=&quot;0&quot;/>&#xA;&lt;/runtimes>&#xA;"/>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="jdt:JRETask"
@@ -164,7 +177,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="burp.port"
-      defaultValue="8080"
+      defaultValue="8181"
       label="Burp listening port">
     <description>Default Burp proxy listening port</description>
   </setupTask>
@@ -213,6 +226,10 @@
       name="chrome.path"
       defaultValue="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
       label="Path to Chrome"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="tomcat.dir"
+      label="Tomcat 9 directory"/>
   <stream name="master"
       label="master">
     <setupTask
