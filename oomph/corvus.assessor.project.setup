@@ -230,6 +230,12 @@
       xsi:type="setup:VariableTask"
       name="tomcat.dir"
       label="Tomcat 9 directory"/>
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?>&#xA;&lt;servers>&#xA;  &lt;server auto-publish-setting=&quot;2&quot; auto-publish-time=&quot;1&quot; configuration-id=&quot;/Servers/Tomcat v9.0 Server at localhost-config&quot; deployDir=&quot;wtpwebapps&quot; hostname=&quot;localhost&quot; id=&quot;Tomcat v9.0 Server at localhost&quot; name=&quot;Tomcat v9.0 Server at localhost&quot; runtime-id=&quot;Apache Tomcat v9.0&quot; server-type=&quot;org.eclipse.jst.server.tomcat.90&quot; server-type-id=&quot;org.eclipse.jst.server.tomcat.90&quot; start-timeout=&quot;45&quot; stop-timeout=&quot;15&quot; testEnvironment=&quot;true&quot; timestamp=&quot;1&quot;>&#xA;    &lt;list key=&quot;modules&quot; value0=&quot;servlets40::org.eclipse.jst.jee.server:servlets40::jst.web::4.0&quot;/>&#xA;  &lt;/server>&#xA;&lt;/servers>"
+      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.wst.server.core/servers.xml">
+    <description>Tomcat 9 server integration</description>
+  </setupTask>
   <stream name="master"
       label="master">
     <setupTask
